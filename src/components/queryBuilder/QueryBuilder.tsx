@@ -22,7 +22,6 @@ import {
   SqlBuilderOptions,
   SqlBuilderOptionsTrend,
 } from '../../types';
-import { DatabaseSelect } from './DatabaseSelect';
 import { isDateTimeType, isDateType } from './utils';
 import { selectors } from '../../selectors';
 import { LogLevelFieldEditor } from './LogLevelField';
@@ -208,7 +207,6 @@ export const QueryBuilder = (props: QueryBuilderProps) => {
     <EditorRows>
       <EditorRow>
         <EditorFieldGroup>
-          <DatabaseSelect datasource={props.datasource} value={builder.database} onChange={onDatabaseChange} />
           <TableSelect
             datasource={props.datasource}
             database={builder.database}
@@ -254,7 +252,7 @@ export const QueryBuilder = (props: QueryBuilderProps) => {
       }
       {builder.mode !== BuilderMode.Trend && (
         <EditorRow>
-          <FieldsEditor fields={builder.fields || []} onFieldsChange={onFieldsChange} fieldsList={fieldsList} />
+          <FieldsEditor table={builder.table || ''} fields={builder.fields || []} onFieldsChange={onFieldsChange} fieldsList={fieldsList} />
         </EditorRow>
       )}
 
@@ -264,7 +262,7 @@ export const QueryBuilder = (props: QueryBuilderProps) => {
         </EditorRow>
       )}
       <EditorRow>
-        <FiltersEditor filters={builder.filters || []} onFiltersChange={onFiltersChange} fieldsList={fieldsList} />
+        <FiltersEditor table={builder.table || ''} filters={builder.filters || []} onFiltersChange={onFiltersChange} fieldsList={fieldsList} />
       </EditorRow>
       {(builder.mode === BuilderMode.Aggregate || builder.mode === BuilderMode.Trend) && (
         <EditorRow>
