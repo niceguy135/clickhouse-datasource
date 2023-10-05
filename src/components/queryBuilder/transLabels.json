@@ -1,0 +1,44 @@
+{
+    "tables":{
+        "event"    : "событие",
+        "log"      : "лог",
+        "severity" : "серьезность",
+        "facility" : "фасилити (это че?)"
+    },
+
+    "colomns": {
+        "event" : {
+            "severity" : "серьезность",
+            "timereported" : "время репорта",
+            "timegenerated" : "время появления",
+            "event" : "событие",
+            "appname" : "имя приложения",
+            "hostname" : "имя хоста",
+            "hostip" : "IP хоста",
+            "subject" : "субъект",
+            "object" : "объект",
+            "context" : "контекст",
+            "message" : "сообщение"
+        },
+
+        "log" : {
+            "severity" : "серьезность",
+            "facility" : "фасилити (это че?)",
+            "timereported" : "время репорта",
+            "progname" : "имя программы",
+            "hostname" : "имя хоста",
+            "fromhostip" : "IP хоста-отправителя",
+            "message" : "сообщение"
+        },
+
+        "severity" : {
+            "severity": "серьезность",
+            "display_name": "display имя"
+        },
+
+        "facility" :{
+            "facility": "фасилити (это че?)",
+            "display_name": "display имя"
+        }
+    }
+}
