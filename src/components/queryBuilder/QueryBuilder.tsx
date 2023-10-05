@@ -235,7 +235,7 @@ export const QueryBuilder = (props: QueryBuilderProps) => {
       }
       {builder.mode !== BuilderMode.Trend && (
         <EditorRow>
-          <FieldsEditor table={builder.table || ''} fields={builder.fields || []} onFieldsChange={onFieldsChange} fieldsList={fieldsList} />
+          <FieldsEditor table={builder.table} fields={builder.fields || []} onFieldsChange={onFieldsChange} fieldsList={fieldsList} />
         </EditorRow>
       )}
 
@@ -245,7 +245,7 @@ export const QueryBuilder = (props: QueryBuilderProps) => {
         </EditorRow>
       )}
       <EditorRow>
-        <FiltersEditor table={builder.table || ''} filters={builder.filters || []} onFiltersChange={onFiltersChange} fieldsList={fieldsList} />
+        <FiltersEditor table={builder.table} filters={builder.filters || []} onFiltersChange={onFiltersChange} fieldsList={fieldsList} />
       </EditorRow>
       {(builder.mode === BuilderMode.Aggregate || builder.mode === BuilderMode.Trend) && (
         <EditorRow>

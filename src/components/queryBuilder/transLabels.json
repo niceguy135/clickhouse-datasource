@@ -18,7 +18,8 @@
             "subject" : "субъект",
             "object" : "объект",
             "context" : "контекст",
-            "message" : "сообщение"
+            "message" : "сообщение",
+            "ALL": "Все столбцы"
         },
 
         "log" : {
@@ -28,17 +29,20 @@
             "progname" : "имя программы",
             "hostname" : "имя хоста",
             "fromhostip" : "IP хоста-отправителя",
-            "message" : "сообщение"
+            "message" : "сообщение",
+            "ALL": "Все столбцы"
         },
 
         "severity" : {
             "severity": "серьезность",
-            "display_name": "display имя"
+            "display_name": "display имя",
+            "ALL": "Все столбцы"
         },
 
         "facility" :{
             "facility": "фасилити (это че?)",
-            "display_name": "display имя"
+            "display_name": "display имя",
+            "ALL": "Все столбцы"
         }
     }
 }

@@ -14,8 +14,10 @@ interface FieldsEditorProps {
 export const FieldsEditor = (props: FieldsEditorProps) => {
   const translatedLabels = require('./transLabels.json');
   const columns = (props.fieldsList || []).map((f) => ({ label: f.label, value: f.name }));
+  console.log("props.table: ", props.table);
   for(let i = 0; i < columns.length; i++){
-    columns[i].label = translatedLabels[props.table][columns[i].label] ?? columns[i].label;
+    
+    columns[i].label = translatedLabels.colomns[props.table] !== undefined ? (translatedLabels.colomns[props.table][columns[i].label] ?? columns[i].label) : columns[i].label;
   }
   const [custom, setCustom] = useState<Array<SelectableValue<string>>>([]);
   const [isOpen, setIsOpen] = useState(false);
