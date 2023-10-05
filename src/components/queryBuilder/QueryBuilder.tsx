@@ -97,23 +97,6 @@ export const QueryBuilder = (props: QueryBuilderProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.datasource, builder.table]);
 
-  const onDatabaseChange = (database = '') => {
-    setBaseFieldsList([]);
-    setTimeField(null);
-    setLogLevelField(null);
-    const queryOptions: SqlBuilderOptions = {
-      ...builder,
-      database,
-      table: '',
-      fields: [],
-      filters: [],
-      orderBy: [],
-      timeField: undefined,
-      logLevelField: undefined,
-    };
-    props.onBuilderOptionsChange(queryOptions);
-  };
-
   const onTableChange = (table = '') => {
     setTimeField(null);
     setLogLevelField(null);

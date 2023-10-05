@@ -50,13 +50,14 @@ const CHEditorByType = (props: CHQueryEditorProps) => {
           </div>
         );
       }
+      const ancudConf = require('../../ancudConf.json');
       if (!query.rawSql || !query.builderOptions) {
         newQuery = {
           ...newQuery,
           rawSql: defaultCHBuilderQuery.rawSql,
           builderOptions: {
             ...defaultCHBuilderQuery.builderOptions,
-            database: props.datasource.getDefaultDatabase() || 'default',
+            database: ancudConf.database || 'default',
           },
         };
       }
