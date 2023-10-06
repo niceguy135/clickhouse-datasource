@@ -18,7 +18,7 @@ export const TableSelect = (props: Props) => {
   const { label, tooltip } = selectors.components.QueryEditor.QueryBuilder.FROM;
   useEffect(() => {
     async function fetchTables() {
-      const translatedLabels = require('./transLabels.json');
+      const translatedLabels = require('./../../../transLabels.json');
       const tables = await datasource.fetchTables(database);
       const values = tables.map((t) => ({ label: t, value: t }));
       for(let i = 0; i < values.length; i++){

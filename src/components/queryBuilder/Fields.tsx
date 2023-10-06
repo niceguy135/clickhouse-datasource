@@ -11,12 +11,7 @@ interface FieldsEditorProps {
   onFieldsChange: (fields: string[]) => void;
 }
 export const FieldsEditor = (props: FieldsEditorProps) => {
-  const translatedLabels = require('./transLabels.json');
   const columns = (props.fieldsList || []).map((f) => ({ label: f.label, value: f.name }));
-  for(let i = 0; i < columns.length; i++){
-    
-    columns[i].label = translatedLabels.colomns !== undefined ? (translatedLabels.colomns[columns[i].label] ?? columns[i].label) : columns[i].label;
-  }
   const [custom, setCustom] = useState<Array<SelectableValue<string>>>([]);
   const [isOpen, setIsOpen] = useState(false);
   const defaultFields: Array<SelectableValue<string>> = [];
