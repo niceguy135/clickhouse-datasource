@@ -21,7 +21,11 @@ const OrderByItem = (props: {
   orderByItem: OrderBy;
   onOrderByItemsChange: (orderBy: OrderBy[]) => void;
 }) => {
+  const translatedLabels = require('./transLabels.json');
   const columns: SelectableValue[] = props.fieldsList || [];
+  for(let i = 0; i < columns.length; i++){
+    columns[i].label = translatedLabels.colomns !== undefined ? (translatedLabels.colomns[columns[i].label ?? ""] ?? columns[i].label) : columns[i].label;
+  }
   const { index, orderByItem } = props;
   const sortOptions = [
     { value: OrderByDirection.ASC, label: 'ASC' },
