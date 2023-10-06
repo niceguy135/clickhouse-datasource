@@ -1,48 +1,28 @@
 {
     "tables":{
-        "event"    : "событие",
-        "log"      : "лог",
-        "severity" : "серьезность",
-        "facility" : "фасилити (это че?)"
+        "event"    : "Событие",
+        "log"      : "Лог",
+        "severity" : "Серьезность",
+        "facility" : "Фасилити"
     },
 
     "colomns": {
-        "event" : {
-            "severity" : "серьезность",
-            "timereported" : "время репорта",
-            "timegenerated" : "время появления",
-            "event" : "событие",
-            "appname" : "имя приложения",
-            "hostname" : "имя хоста",
-            "hostip" : "IP хоста",
-            "subject" : "субъект",
-            "object" : "объект",
-            "context" : "контекст",
-            "message" : "сообщение",
-            "ALL": "Все столбцы"
-        },
-
-        "log" : {
-            "severity" : "серьезность",
-            "facility" : "фасилити (это че?)",
-            "timereported" : "время репорта",
-            "progname" : "имя программы",
-            "hostname" : "имя хоста",
-            "fromhostip" : "IP хоста-отправителя",
-            "message" : "сообщение",
-            "ALL": "Все столбцы"
-        },
-
-        "severity" : {
-            "severity": "серьезность",
-            "display_name": "display имя",
-            "ALL": "Все столбцы"
-        },
-
-        "facility" :{
-            "facility": "фасилити (это че?)",
-            "display_name": "display имя",
-            "ALL": "Все столбцы"
-        }
+        "severity" : "Серьезность",
+        "timereported" : "Время репорта",
+        "timegenerated" : "Время появления",
+        "event" : "Событие",
+        "event_type" : "Тип события",
+        "appname" : "Имя приложения",
+        "hostname" : "Имя хоста",
+        "hostip" : "IP хоста",
+        "subject" : "Субъект",
+        "object" : "Объект",
+        "context" : "Контекст",
+        "fromhostip" : "IP хоста-отправителя",
+        "message" : "Сообщение",
+        "facility": "Фасилити",
+        "progname": "Имя программы",
+        "display_name": "Имя дисплея",
+        "ALL": "Все столбцы"
     }
 }

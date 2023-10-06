@@ -6,7 +6,6 @@ import { selectors } from './../../selectors';
 import { EditorField } from '@grafana/experimental';
 
 interface FieldsEditorProps {
-  table: string; 
   fieldsList: FullField[];
   fields: string[];
   onFieldsChange: (fields: string[]) => void;
@@ -14,10 +13,9 @@ interface FieldsEditorProps {
 export const FieldsEditor = (props: FieldsEditorProps) => {
   const translatedLabels = require('./transLabels.json');
   const columns = (props.fieldsList || []).map((f) => ({ label: f.label, value: f.name }));
-  console.log("props.table: ", props.table);
   for(let i = 0; i < columns.length; i++){
     
-    columns[i].label = translatedLabels.colomns[props.table] !== undefined ? (translatedLabels.colomns[props.table][columns[i].label] ?? columns[i].label) : columns[i].label;
+    columns[i].label = translatedLabels.colomns !== undefined ? (translatedLabels.colomns[columns[i].label] ?? columns[i].label) : columns[i].label;
   }
   const [custom, setCustom] = useState<Array<SelectableValue<string>>>([]);
   const [isOpen, setIsOpen] = useState(false);

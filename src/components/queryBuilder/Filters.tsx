@@ -355,7 +355,6 @@ export const FilterEditor = (props: {
 };
 
 export const FiltersEditor = (props: {
-  table: string;
   fieldsList: FullField[];
   filters: Filter[];
   onFiltersChange: (filters: Filter[]) => void;
@@ -363,7 +362,7 @@ export const FiltersEditor = (props: {
   const translatedLabels = require('./transLabels.json');
   const { filters = [], onFiltersChange, fieldsList = [] } = props;
   for(let i = 0; i < fieldsList.length; i++){
-    fieldsList[i].label = translatedLabels.colomns[props.table] !== undefined ? (translatedLabels.colomns[props.table][fieldsList[i].label] ?? fieldsList[i].label) : fieldsList[i].label;
+    fieldsList[i].label = translatedLabels.colomns !== undefined ? (translatedLabels.colomns[fieldsList[i].label] ?? fieldsList[i].label) : fieldsList[i].label;
   }
   const { label, tooltip, AddLabel, RemoveLabel } = selectors.components.QueryEditor.QueryBuilder.WHERE;
   const addFilter = () => {
