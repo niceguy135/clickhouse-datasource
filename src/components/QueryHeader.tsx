@@ -28,7 +28,8 @@ export const QueryHeader = ({ query, onChange, onRunQuery }: QueryHeaderProps) =
         onChange({ ...query, format });
       }
     }
-    const translatedFields = require("../components/queryBuilder/transLabels.json");
+
+    const translatedFields = require("../../transLabels.json");
     const firstFiledsSymbolIndex = query.rawSql.indexOf(" ") + 1; //следующий символ сразу после первого пробела, что сразу после SELECT
     const lastFiledsSymbolIndex = query.rawSql.indexOf("FROM") - 1; //последний символ сразу перед " FROM ..."
     const queryFileds = query.rawSql.slice(
@@ -43,7 +44,7 @@ export const QueryHeader = ({ query, onChange, onRunQuery }: QueryHeaderProps) =
       }
     }
     query.rawSql = `${query.rawSql.slice(0,firstFiledsSymbolIndex - 1)} ${queryFileds.join(", ")} ${query.rawSql.slice(lastFiledsSymbolIndex + 1)}`;
-    console.log(query.rawSql)
+
     onRunQuery();
   };
 
