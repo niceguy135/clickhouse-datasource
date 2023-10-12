@@ -19,12 +19,12 @@ const MetricEditor = (props: {
   const [alias, setAlias] = useState(metric.alias || '');
   const { ALIAS } = selectors.components.QueryEditor.QueryBuilder.AGGREGATES;
   const aggregationTypes: Array<SelectableValue<BuilderMetricFieldAggregation>> = [
-    { value: BuilderMetricFieldAggregation.Count, label: 'Count' },
-    { value: BuilderMetricFieldAggregation.Sum, label: 'Sum' },
-    { value: BuilderMetricFieldAggregation.Min, label: 'Min' },
-    { value: BuilderMetricFieldAggregation.Max, label: 'Max' },
-    { value: BuilderMetricFieldAggregation.Average, label: 'Average' },
-    { value: BuilderMetricFieldAggregation.Any, label: 'Any' },
+    { value: BuilderMetricFieldAggregation.Count, label: 'Количество' },
+    { value: BuilderMetricFieldAggregation.Sum, label: 'Сумма' },
+    { value: BuilderMetricFieldAggregation.Min, label: 'Минимум' },
+    { value: BuilderMetricFieldAggregation.Max, label: 'Максимум' },
+    { value: BuilderMetricFieldAggregation.Average, label: 'Среднее' },
+    { value: BuilderMetricFieldAggregation.Any, label: 'Любое' },
     // { value: BuilderMetricFieldAggregation.Count_Distinct, label: 'Distinct Count' },
   ];
   const onMetricFieldChange = (e: SelectableValue<string>) => {
