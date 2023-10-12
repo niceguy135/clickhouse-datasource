@@ -28,8 +28,6 @@ export const TableSelect = (props: Props) => {
       if (table && !tables.find((x) => x === table)) {
         values.push({ label: table!, value: table! });
       }
-      // TODO - can't seem to reset the select to unselected
-      values.push({ label: '-- Choose --', value: '' });
       setList(values);
     }
     fetchTables();
