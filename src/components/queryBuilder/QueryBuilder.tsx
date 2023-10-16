@@ -46,7 +46,6 @@ export const QueryBuilder = (props: QueryBuilderProps) => {
       props.datasource
         .fetchFieldsFull(database, table)
         .then(async (fields) => {
-          fields.push({ name: '*', label: 'ВСЕ', type: 'string', picklistValues: [] });
           setBaseFieldsList(fields);
 
           // if no filters are set, we add a default one for the time range
