@@ -29,22 +29,6 @@ export const QueryHeader = ({ query, onChange, onRunQuery }: QueryHeaderProps) =
       }
     }
 
-    const translatedFields = require("../../transLabels.json");
-    const firstFiledsSymbolIndex = query.rawSql.indexOf(" ") + 1; //следующий символ сразу после первого пробела, что сразу после SELECT
-    const lastFiledsSymbolIndex = query.rawSql.indexOf("FROM") - 1; //последний символ сразу перед " FROM ..."
-    const queryFileds = query.rawSql.slice(
-      firstFiledsSymbolIndex,
-      lastFiledsSymbolIndex
-    ).split(", ");
-
-    for(let i = 0; i < queryFileds.length; i++) {
-      const fieldWithoutBrackets = queryFileds[i].slice(1,queryFileds[i].length - 1);
-      if( Object.keys(translatedFields.colomns).find( (e: string) => e === fieldWithoutBrackets )) {
-        queryFileds[i] = `${queryFileds[i]} AS "${translatedFields.colomns[fieldWithoutBrackets]}"`;
-      }
-    }
-    query.rawSql = `${query.rawSql.slice(0,firstFiledsSymbolIndex - 1)} ${queryFileds.join(", ")} ${query.rawSql.slice(lastFiledsSymbolIndex + 1)}`;
-
     onRunQuery();
   };
 
