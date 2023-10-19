@@ -28,7 +28,6 @@ export const QueryHeader = ({ query, onChange, onRunQuery }: QueryHeaderProps) =
         onChange({ ...query, format });
       }
     }
-
     onRunQuery();
   };
 

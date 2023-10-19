@@ -6,23 +6,22 @@
         "facility" : "Фасилити"
     },
 
-    "colomns": {
-        "severity" : "Серьезность",
-        "timereported" : "Время репорта",
-        "timegenerated" : "Время появления",
-        "event" : "Событие",
-        "event_type" : "Тип события",
+    "columns": {
+        "severity" : "Важность",
+        "timereported" : "Время регистрации",
+        "timegenerated" : "Дата",
+        "event_type" : "Тип",
         "appname" : "Имя приложения",
-        "hostname" : "Имя хоста",
-        "hostip" : "IP хоста",
+        "hostname" : "Имя ТС",
+        "hostip" : "Адрес ТС",
         "subject" : "Субъект",
         "object" : "Объект",
         "context" : "Контекст",
-        "fromhostip" : "IP хоста-отправителя",
+        "fromhostip" : "IP ТС отправителя",
         "message" : "Сообщение",
-        "facility": "Фасилити",
+        "facility": "Источник",
         "progname": "Имя программы",
-        "display_name": "Имя дисплея",
+        "display_name": "Отображаемое имя",
         "ALL": "Все столбцы"
     }
 }

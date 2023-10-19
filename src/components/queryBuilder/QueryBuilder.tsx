@@ -188,7 +188,7 @@ export const QueryBuilder = (props: QueryBuilderProps) => {
   const translatedLabels = require('../../../transLabels.json');
   for(let i = 0; i < fieldsList.length; i++){
     
-    fieldsList[i].label = translatedLabels.colomns !== undefined ? (translatedLabels.colomns[fieldsList[i].label] ?? fieldsList[i].label) : fieldsList[i].label;
+    fieldsList[i].label = translatedLabels.columns !== undefined ? (translatedLabels.columns[fieldsList[i].label] ?? fieldsList[i].label) : fieldsList[i].label;
   }
   return builder ? (
     <EditorRows>
