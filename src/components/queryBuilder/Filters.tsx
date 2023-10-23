@@ -28,15 +28,15 @@ const filterOperators: Array<SelectableValue<FilterOperator>> = [
   { value: FilterOperator.NotIn, label: 'NOT IN' },
   { value: FilterOperator.IsNull, label: 'IS NULL' },
   { value: FilterOperator.IsNotNull, label: 'IS NOT NULL' },
-  { value: FilterOperator.WithInGrafanaTimeRange, label: 'WITHIN DASHBOARD TIME RANGE' },
-  { value: FilterOperator.OutsideGrafanaTimeRange, label: 'OUTSIDE DASHBOARD TIME RANGE' },
+  { value: FilterOperator.WithInGrafanaTimeRange, label: 'В ДИАПАЗОНЕ ВРЕМЕНИ ПАНЕЛИ' },
+  { value: FilterOperator.OutsideGrafanaTimeRange, label: 'ВНЕ ДИАПАЗОНА ВРЕМЕНИ ПАНЕЛИ' },
 ];
 const standardTimeOptions: Array<SelectableValue<string>> = [
-  { value: 'today()', label: 'TODAY' },
-  { value: 'yesterday()', label: 'YESTERDAY' },
-  { value: 'now()', label: 'NOW' },
-  { value: 'GRAFANA_START_TIME', label: 'DASHBOARD START TIME' },
-  { value: 'GRAFANA_END_TIME', label: 'DASHBOARD END TIME' },
+  { value: 'today()', label: 'СЕГОДНЯ' },
+  { value: 'yesterday()', label: 'ВЧЕРА' },
+  { value: 'now()', label: 'СЕЙЧАС' },
+  { value: 'GRAFANA_START_TIME', label: 'НАЧАЛЬНОЕ ВРЕМЯ ПАНЕЛИ' },
+  { value: 'GRAFANA_END_TIME', label: 'КОНЕЧНОЕ ВРЕМЯ ПАНЕЛИ' },
 ];
 export const defaultNewFilter: NullFilter = {
   filterType: 'custom',

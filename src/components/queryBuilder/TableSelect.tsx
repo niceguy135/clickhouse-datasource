@@ -18,14 +18,16 @@ export const TableSelect = (props: Props) => {
   const { label, tooltip } = selectors.components.QueryEditor.QueryBuilder.FROM;
   useEffect(() => {
     async function fetchTables() {
+      const translatedLabels = require('./../../../transLabels.json');
       const tables = await datasource.fetchTables(database);
       const values = tables.map((t) => ({ label: t, value: t }));
+      for(let i = 0; i < values.length; i++){
+        values[i].label = translatedLabels.tables[values[i].label] ?? values[i].label;
+      }
       // Add selected value to the list if it does not exist.
       if (table && !tables.find((x) => x === table)) {
         values.push({ label: table!, value: table! });
       }
-      // TODO - can't seem to reset the select to unselected
-      values.push({ label: '-- Choose --', value: '' });
       setList(values);
     }
     fetchTables();

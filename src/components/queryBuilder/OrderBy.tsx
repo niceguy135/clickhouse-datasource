@@ -24,8 +24,8 @@ const OrderByItem = (props: {
   const columns: SelectableValue[] = props.fieldsList || [];
   const { index, orderByItem } = props;
   const sortOptions = [
-    { value: OrderByDirection.ASC, label: 'ASC' },
-    { value: OrderByDirection.DESC, label: 'DESC' },
+    { value: OrderByDirection.ASC, label: 'ПО ВОЗРАСТАНИЮ' },
+    { value: OrderByDirection.DESC, label: 'ПО УБЫВАНИЮ' },
   ];
   const onOrderBySortFieldUpdate = (name: string) => {
     const orderByItems: OrderBy[] = [...props.orderBy].map((o, i) => {
