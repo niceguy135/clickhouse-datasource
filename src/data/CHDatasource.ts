@@ -15,7 +15,7 @@ import {
   vectorator,
 } from '@grafana/data';
 import { DataSourceWithBackend, getTemplateSrv } from '@grafana/runtime';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import {
   BuilderMetricField,
   BuilderMetricFieldAggregation,
@@ -41,6 +41,8 @@ import {
   TIME_FIELD_ALIAS,
 } from './logs';
 import { getSQLFromQueryOptions } from '../components/queryBuilder/utils';
+
+import translatedLabels from '../../transLabels.json'
 
 export class Datasource
   extends DataSourceWithBackend<CHQuery, CHConfig>
@@ -426,7 +428,24 @@ export class Datasource
     return super.query({
       ...request,
       targets,
+    }).pipe(
+      map(
+        element => this.translateFields(element)
+      )
+    )
+  }
+
+  private translateFields(element: DataQueryResponse): DataQueryResponse {
+    element.data.forEach((data, dataInd) => {
+      if(data.name === "A"){
+        data.fields.forEach((field: any, filedInd: any) => {
+          const originName = field.name;
+          element.data[dataInd].fields[filedInd].name = (translatedLabels.columns as any)[originName] ?? originName;
+        })
+      }
     });
+
+    return element;
   }
 
   private runQuery(request: Partial<CHQuery>, options?: any): Promise<DataFrame> {
